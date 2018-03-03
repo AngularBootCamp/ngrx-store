@@ -24,12 +24,8 @@ export class AppComponent {
     this.store.dispatch(new PickBerryAction());
   }
 
-  pickApple() {
-    this.store.dispatch(new PickAppleAction());
-  }
-
-  pickApples() {
-    this.store.dispatch(new PickApplesAction(3));
+  pickApple(count: number) {
+    this.store.dispatch(new PickApplesAction(count));
   }
 
   empty() {
