@@ -3,7 +3,7 @@ import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs/Observable';
 import { map } from 'rxjs/operators';
 
-import { PickBerryAction, AppState, PickAppleAction, PickApplesAction, EmptyCartAction } from './state';
+import { PickBerryAction, AppState, PickApplesAction, EmptyCartAction } from './state';
 
 @Component({
   selector: 'app-root',
