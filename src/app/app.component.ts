@@ -1,6 +1,6 @@
 ﻿import { Component } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { Observable } from 'rxjs/Observable';
+import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
 import { PickBerryAction, AppState, PickApplesAction, EmptyCartAction } from './state';
