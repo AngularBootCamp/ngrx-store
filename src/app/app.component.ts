@@ -1,9 +1,9 @@
-﻿import { Component } from '@angular/core';
+import { Component } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
-import { PickBerryAction, AppState, PickApplesAction, EmptyCartAction } from './state';
+import { AppState, EmptyCartAction, PickApplesAction, PickBerryAction } from './state';
 
 @Component({
   selector: 'app-root',
