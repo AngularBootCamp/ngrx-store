@@ -4,7 +4,7 @@ import { StoreModule } from '@ngrx/store';
 
 import { AppComponent } from './app.component';
 import { CounterDisplayComponent } from './counter-display.component';
-import { appleCounterReducer, AppState, berryCounterReducer } from './state';
+import { AppState, appleCounterReducer, berryCounterReducer } from './state';
 
 @NgModule({
   declarations: [
