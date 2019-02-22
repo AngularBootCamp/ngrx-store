@@ -5,7 +5,7 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
   templateUrl: './counter-display.component.html'
 })
 export class CounterDisplayComponent {
-  @Input() label: string;
-  @Input() counter: number;
+  @Input() label = '';
+  @Input() counter = 0;
   @Output() pick = new EventEmitter<number>();
 }

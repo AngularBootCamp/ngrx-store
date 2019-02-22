@@ -1,19 +1,19 @@
 import { Action } from '@ngrx/store';
 
-const PICK_BERRY = 'PICK_BERRY';
+const pickBerry = 'PICK_BERRY';
 export class PickBerryAction implements Action {
-  type = PICK_BERRY;
+  type = pickBerry;
 }
 
-const PICK_APPLES = 'PICK_APPLES';
+const pickApples = 'PICK_APPLES';
 export class PickApplesAction implements Action {
-  type = PICK_APPLES;
+  type = pickApples;
   constructor(public payload: number) { }
 }
 
-const EMPTY_CART = 'EMPTY_CART';
+const emptyCart = 'EMPTY_CART';
 export class EmptyCartAction implements Action {
-  type = EMPTY_CART;
+  type = emptyCart;
 }
 
 export interface AppState {
@@ -24,10 +24,10 @@ export interface AppState {
 export function berryCounterReducer
   (value: number = 0, action: Action): number {
   switch (action.type) {
-    case PICK_BERRY:
+    case pickBerry:
       return value + 1;
 
-    case EMPTY_CART:
+    case emptyCart:
       return 0;
 
     default:
@@ -38,11 +38,11 @@ export function berryCounterReducer
 export function appleCounterReducer(value: number = 0, action: Action): number {
   switch (action.type) {
     // If you have too many apples, they spill and you lose them all.
-    case PICK_APPLES:
+    case pickApples:
       const y = value + (action as PickApplesAction).payload;
       return y > 10 ? 0 : y;
 
-    case EMPTY_CART:
+    case emptyCart:
       return 0;
 
     default:
