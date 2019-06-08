@@ -3,7 +3,12 @@ import { Store, select } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
-import { AppState, EmptyCartAction, PickApplesAction, PickBerryAction } from './state';
+import {
+  AppState,
+  EmptyCartAction,
+  PickApplesAction,
+  PickBerryAction
+} from './state';
 
 @Component({
   selector: 'app-root',
@@ -14,10 +19,14 @@ export class AppComponent {
   apple: Observable<number>;
   total: Observable<number>;
 
-  constructor(public store: Store<AppState>) {
-    this.berry = store.pipe(select(myAppState => myAppState.berryCounter));
+  constructor(private store: Store<AppState>) {
+    this.berry = store.pipe(
+      select(myAppState => myAppState.berryCounter)
+    );
     this.apple = store.pipe(select(state => state.appleCounter));
-    this.total = store.pipe(map(s => s.berryCounter + s.appleCounter));
+    this.total = store.pipe(
+      map(s => s.berryCounter + s.appleCounter)
+    );
   }
 
   pickBerry() {

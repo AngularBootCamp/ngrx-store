@@ -8,7 +8,7 @@ export class PickBerryAction implements Action {
 const pickApples = 'PICK_APPLES';
 export class PickApplesAction implements Action {
   type = pickApples;
-  constructor(public payload: number) { }
+  constructor(public payload: number) {}
 }
 
 const emptyCart = 'EMPTY_CART';
@@ -21,8 +21,10 @@ export interface AppState {
   appleCounter: number;
 }
 
-export function berryCounterReducer
-  (value: number = 0, action: Action): number {
+export function berryCounterReducer(
+  value: number = 0,
+  action: Action
+): number {
   switch (action.type) {
     case pickBerry:
       return value + 1;
@@ -35,7 +37,10 @@ export function berryCounterReducer
   }
 }
 
-export function appleCounterReducer(value: number = 0, action: Action): number {
+export function appleCounterReducer(
+  value: number = 0,
+  action: Action
+): number {
   switch (action.type) {
     // If you have too many apples, they spill and you lose them all.
     case pickApples:
