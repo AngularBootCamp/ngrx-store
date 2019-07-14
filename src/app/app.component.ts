@@ -3,12 +3,7 @@ import { Store, select } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
-import {
-  AppState,
-  EmptyCartAction,
-  PickApplesAction,
-  PickBerryAction
-} from './state';
+import { AppState, emptyCart, pickApples, pickBerry } from './state';
 
 @Component({
   selector: 'app-root',
@@ -30,14 +25,14 @@ export class AppComponent {
   }
 
   pickBerry() {
-    this.store.dispatch(new PickBerryAction());
+    this.store.dispatch(pickBerry());
   }
 
   pickApple(count: number) {
-    this.store.dispatch(new PickApplesAction(count));
+    this.store.dispatch(pickApples({ count }));
   }
 
   empty() {
-    this.store.dispatch(new EmptyCartAction());
+    this.store.dispatch(emptyCart());
   }
 }

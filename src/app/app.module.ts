@@ -4,20 +4,14 @@ import { StoreModule } from '@ngrx/store';
 
 import { AppComponent } from './app.component';
 import { CounterDisplayComponent } from './counter-display.component';
-import {
-  AppState,
-  appleCounterReducer,
-  berryCounterReducer
-} from './state';
+import { ROOT_REDUCERS } from './reducers';
+import { AppState } from './state';
 
 @NgModule({
   declarations: [AppComponent, CounterDisplayComponent],
   imports: [
     BrowserModule,
-    StoreModule.forRoot<AppState>({
-      berryCounter: berryCounterReducer,
-      appleCounter: appleCounterReducer
-    })
+    StoreModule.forRoot<AppState>(ROOT_REDUCERS)
   ],
   bootstrap: [AppComponent]
 })
