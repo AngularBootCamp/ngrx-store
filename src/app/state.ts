@@ -1,4 +1,10 @@
-import { createAction, createReducer, on, props } from '@ngrx/store';
+import {
+  ActionReducerMap,
+  createAction,
+  createReducer,
+  on,
+  props
+} from '@ngrx/store';
 
 export const pickBerry = createAction('PICK_BERRY');
 
@@ -31,3 +37,8 @@ export const appleCounterReducer = createReducer(
   }),
   on(emptyCart, _state => 0)
 );
+
+export const reducers: ActionReducerMap<AppState> = {
+  berryCounter: berryCounterReducer,
+  appleCounter: appleCounterReducer
+};

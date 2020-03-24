@@ -4,15 +4,11 @@ import { StoreModule } from '@ngrx/store';
 
 import { AppComponent } from './app.component';
 import { CounterDisplayComponent } from './counter-display.component';
-import { ROOT_REDUCERS } from './reducers';
-import { AppState } from './state';
+import { AppState, reducers } from './state';
 
 @NgModule({
   declarations: [AppComponent, CounterDisplayComponent],
-  imports: [
-    BrowserModule,
-    StoreModule.forRoot<AppState>(ROOT_REDUCERS)
-  ],
+  imports: [BrowserModule, StoreModule.forRoot<AppState>(reducers)],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
