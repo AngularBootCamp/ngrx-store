@@ -5,14 +5,14 @@
 <div class="two-across">
   <counter-display
     label="Berries"
-    [counter]="berry | async"
+    [counter]="(berry | async) ?? 0"
     (pick)="pickBerry()"
   >
   </counter-display>
 
   <counter-display
     label="Apples"
-    [counter]="apple | async"
+    [counter]="(apple | async) ?? 0"
     (pick)="pickApple($event)"
   >
   </counter-display>

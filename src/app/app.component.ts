@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Store, select } from '@ngrx/store';
+import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
@@ -15,10 +15,9 @@ export class AppComponent {
   total: Observable<number>;
 
   constructor(private store: Store<AppState>) {
-    this.berry = store.pipe(
-      select(myAppState => myAppState.berryCounter)
-    );
-    this.apple = store.pipe(select(state => state.appleCounter));
+    this.berry = store.select(myAppState => myAppState.berryCounter);
+    this.apple = store.select(state => state.appleCounter);
+    // Internally, store.select uses RxJS that looks like this:
     this.total = store.pipe(
       map(s => s.berryCounter + s.appleCounter)
     );
