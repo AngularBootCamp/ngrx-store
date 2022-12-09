@@ -6,14 +6,14 @@ import {
   props
 } from '@ngrx/store';
 
-export const pickBerry = createAction('PICK_BERRY');
+export const pickBerry = createAction('[Page] PICK_BERRY');
 
 export const pickApples = createAction(
-  'PICK_APPLES',
+  '[Page] PICK_APPLES',
   props<{ count: number }>()
 );
 
-export const emptyCart = createAction('EMPTY_CART');
+export const emptyCart = createAction('[Page] EMPTY_CART');
 
 export interface AppState {
   berryCounter: number;
