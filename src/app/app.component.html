@@ -1,19 +1,17 @@
 <h5>Counter Example</h5>
-<button (click)="empty()" class="btn">Empty Cart</button>
+<button (click)="empty()">Empty Cart</button>
 <p>Total Fruit: {{ total | async }}</p>
 
-<div class="two-across">
-  <counter-display
+<div class="counters">
+  <app-counter-display
     label="Berries"
     [counter]="(berry | async) ?? 0"
     (pick)="pickBerry()"
-  >
-  </counter-display>
+  ></app-counter-display>
 
-  <counter-display
+  <app-counter-display
     label="Apples"
     [counter]="(apple | async) ?? 0"
     (pick)="pickApple($event)"
-  >
-  </counter-display>
+  ></app-counter-display>
 </div>

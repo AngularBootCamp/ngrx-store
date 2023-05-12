@@ -6,7 +6,7 @@ import {
 } from '@angular/core';
 
 @Component({
-  selector: 'counter-display',
+  selector: 'app-counter-display',
   templateUrl: './counter-display.component.html'
 })
 export class CounterDisplayComponent {
