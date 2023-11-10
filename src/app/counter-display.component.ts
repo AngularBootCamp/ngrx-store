@@ -1,3 +1,4 @@
+import { NgIf } from '@angular/common';
 import {
   Component,
   EventEmitter,
@@ -7,7 +8,9 @@ import {
 
 @Component({
   selector: 'app-counter-display',
-  templateUrl: './counter-display.component.html'
+  templateUrl: './counter-display.component.html',
+  standalone: true,
+  imports: [NgIf]
 })
 export class CounterDisplayComponent {
   @Input() label = '';

@@ -1,13 +1,17 @@
+import { AsyncPipe } from '@angular/common';
 import { Component } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Observable, map } from 'rxjs';
 
+import { CounterDisplayComponent } from './counter-display.component';
 import { AppState, emptyCart, pickApples, pickBerry } from './state';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.scss'],
+  standalone: true,
+  imports: [CounterDisplayComponent, AsyncPipe]
 })
 export class AppComponent {
   berry: Observable<number>;
