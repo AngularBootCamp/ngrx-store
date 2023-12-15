@@ -13,7 +13,7 @@ import {
   imports: [NgIf]
 })
 export class CounterDisplayComponent {
-  @Input() label = '';
-  @Input() counter = 0;
+  @Input({ required: true }) label!: string;
+  @Input({ required: true }) counter!: number;
   @Output() pick = new EventEmitter<number>();
 }
