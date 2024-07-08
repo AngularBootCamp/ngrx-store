@@ -1,4 +1,3 @@
-import { NgIf } from '@angular/common';
 import {
   Component,
   EventEmitter,
@@ -9,8 +8,7 @@ import {
 @Component({
   selector: 'app-counter-display',
   templateUrl: './counter-display.component.html',
-  standalone: true,
-  imports: [NgIf]
+  standalone: true
 })
 export class CounterDisplayComponent {
   @Input({ required: true }) label!: string;
