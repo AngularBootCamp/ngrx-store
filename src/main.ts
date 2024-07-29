@@ -2,11 +2,10 @@
 import 'zone.js'; // Avoid error in StackBlitz for Angular polyfill
 
 import { bootstrapApplication } from '@angular/platform-browser';
-import { provideStore } from '@ngrx/store';
 
 import { AppComponent } from './app/app.component';
-import { reducers } from './app/state';
+import { appConfig } from './app/app.config';
 
-bootstrapApplication(AppComponent, {
-  providers: [provideStore(reducers)]
-}).catch(err => console.error(err));
+bootstrapApplication(AppComponent, appConfig).catch(err =>
+  console.error(err)
+);
